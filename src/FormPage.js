@@ -21,8 +21,6 @@ class FormPage extends Component {
             newAmount9: '',
             newAmount10: '',
 
-            arr: this.props.products,
-
             report: []
         }
     }
@@ -42,105 +40,104 @@ class FormPage extends Component {
             itemsSold[i] = this.state.newAmount1 + ' ' + list[0];
             i++;
             tf = true;
-            total += (this.state.newAmount1 * this.state.arr[0].price);
+            total += (this.state.newAmount1 * this.props.products[0].price);
         } if (this.state.newAmount2 !== '') {
             itemsSold[i] = this.state.newAmount2 + ' ' + list[1];
             i++;
             tf = true;
-            total += (this.state.newAmount2 * this.state.arr[1].price);
+            total += (this.state.newAmount2 * this.props.products[1].price);
         } if (this.state.newAmount3 !== '') {
             itemsSold[i] = this.state.newAmount3 + ' ' + list[2];
             i++;
             tf = true;
-            total += (this.state.newAmount3 * this.state.arr[2].price);
+            total += (this.state.newAmount3 * this.props.products[2].price);
         } if (this.state.newAmount4 !== '') {
             itemsSold[i] = this.state.newAmount4 + ' ' + list[3];
             i++;
             tf = true;
-            total += (this.state.newAmount4 * this.state.arr[3].price);
+            total += (this.state.newAmount4 * this.props.products[3].price);
         } if (this.state.newAmount5 !== '') {
             itemsSold[i] = this.state.newAmount5 + ' ' + list[4];
             i++;
             tf = true;
-            total += (this.state.newAmount5 * this.state.arr[4].price);
+            total += (this.state.newAmount5 * this.props.products[4].price);
         } if (this.state.newAmount6 !== '') {
             itemsSold[i] = this.state.newAmount6 + ' ' + list[5];
             i++;
-            total += (this.state.newAmount6 * this.state.arr[5].price);
+            total += (this.state.newAmount6 * this.props.products[5].price);
         } if (this.state.newAmount7 !== '') {
             itemsSold[i] = this.state.newAmount7 + ' ' + list[6];
             i++;
             tf = true;
-            total += (this.state.newAmount7 * this.state.arr[6].price);
+            total += (this.state.newAmount7 * this.props.products[6].price);
         } if (this.state.newAmount8 !== '') {
             itemsSold[i] = this.state.newAmount8 + ' ' + list[7];
             i++;
             tf = true;
-            total += (this.state.newAmount8 * this.state.arr[7].price);
+            total += (this.state.newAmount8 * this.props.products[7].price);
         } if (this.state.newAmount9 !== '') {
             itemsSold[i] = this.state.newAmount9 + ' ' + list[8];
             i++;
             tf = true;
-            total += (this.state.newAmount9 * this.state.arr[8].price);
+            total += (this.state.newAmount9 * this.props.products[8].price);
         } if (this.state.newAmount10 !== '') {
             itemsSold[i] = this.state.newAmount10 + ' ' + list[9];
             i++;
             tf = true;
-            total += (this.state.newAmount10 * this.state.arr[9].price);
+            total += (this.state.newAmount10 * this.props.products[9].price);
         }
 
         if (tf === false) {
             alert("Please enter an amount sold.");
+        } else {
+
+            commission = total * (this.state.newCommission / 100)
+
+            var currentdate = new Date();
+            var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth() + 1) + "/"
+                + currentdate.getFullYear() + " @ "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
+
+            // console.log(datetime);
+            // console.log(itemsSold.toString());
+            // console.log(total);
+            // console.log(commission);
+
+            this.setState({
+                newAmount1: '',
+                newAmount2: '',
+                newAmount3: '',
+                newAmount4: '',
+                newAmount5: '',
+                newAmount6: '',
+                newAmount7: '',
+                newAmount8: '',
+                newAmount9: '',
+                newAmount10: '',
+                newCommission: 10,  //default
+                newName: '',
+            })
+            const newItem = {
+                date: datetime.slice(),
+                list: itemsSold.toString().slice(),
+                revenue: total,
+                commission: commission,
+            }
+
+            var tempList = [];
+            tempList = this.state.report;
+
+            tempList.push(newItem);
+
+            this.setState({
+                report: tempList
+            })
+
+            this.props.sendReport(this.state.report);
         }
-
-        commission = total * (this.state.newCommission / 100)
-
-        var currentdate = new Date();
-        var datetime = currentdate.getDate() + "/"
-            + (currentdate.getMonth() + 1) + "/"
-            + currentdate.getFullYear() + " @ "
-            + currentdate.getHours() + ":"
-            + currentdate.getMinutes() + ":"
-            + currentdate.getSeconds();
-
-        // console.log(datetime);
-        // console.log(itemsSold.toString());
-        // console.log(total);
-        // console.log(commission);
-
-        this.setState({
-            newAmount1: '',
-            newAmount2: '',
-            newAmount3: '',
-            newAmount4: '',
-            newAmount5: '',
-            newAmount6: '',
-            newAmount7: '',
-            newAmount8: '',
-            newAmount9: '',
-            newAmount10: '',
-            newCommission: 10,  //default
-            newName: '',
-        })
-
-        const newItem = {
-            date: datetime.slice(),
-            list: itemsSold.toString().slice(),
-            revenue: total,
-            commission: commission,
-        }
-
-        var tempList = [];
-        tempList = this.state.report;
-
-        tempList.push(newItem);
-
-        this.setState({
-            report: tempList
-        })
-
-        this.props.sendReport(this.state.report);
-
     }
 
     updateName(input) {
@@ -235,8 +232,8 @@ class FormPage extends Component {
 
     render() {
         var list = [];
-        for (var i = 0; i < this.state.arr.length; i++) {
-            list.push(this.state.arr[i].product)
+        for (var i = 0; i < this.props.products.length; i++) {
+            list.push(this.props.products[i].product)
         }
         return (
             <div>
@@ -267,14 +264,14 @@ class FormPage extends Component {
                     </Form.Group>
 
 
-                    {list.map(item => {
+                    {this.props.products.map(item => {
 
-                        var myString = "updateAmount" + (list.indexOf(item) + 1);
+                        var myString = "updateAmount" + (list.indexOf(item.product) + 1);
 
                         return (
                             <Form.Group>
-                                <Form.Label>{item}</Form.Label>
-                                <Form.Control minLength={1} style={{ backgroundColor: '#f4ea8e' }} value={this.state["newAmount" + (list.indexOf(item) + 1)]} delayTimeout={100} type="number" placeholder="Enter Amount Sold" onChange={(e) => { this.renderSwitch(myString, e) }} />
+                                <Form.Label>{item.product}</Form.Label>
+                                <Form.Control minLength={1} style={{ backgroundColor: '#f4ea8e' }} value={this.state["newAmount" + (list.indexOf(item.product) + 1)]} delayTimeout={100} type="number" placeholder="Enter Amount Sold" onChange={(e) => { this.renderSwitch(myString, e) }} />
                             </Form.Group>
                         )
                     })}
