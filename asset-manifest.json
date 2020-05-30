@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/Lemonade-Stand/static/js/main.1affe936.chunk.js",
-    "main.js.map": "/Lemonade-Stand/static/js/main.1affe936.chunk.js.map",
+    "main.js": "/Lemonade-Stand/static/js/main.7c9a6c16.chunk.js",
+    "main.js.map": "/Lemonade-Stand/static/js/main.7c9a6c16.chunk.js.map",
     "runtime-main.js": "/Lemonade-Stand/static/js/runtime-main.c96ad513.js",
     "runtime-main.js.map": "/Lemonade-Stand/static/js/runtime-main.c96ad513.js.map",
     "static/css/2.af3c1da9.chunk.css": "/Lemonade-Stand/static/css/2.af3c1da9.chunk.css",
     "static/js/2.16677f4e.chunk.js": "/Lemonade-Stand/static/js/2.16677f4e.chunk.js",
     "static/js/2.16677f4e.chunk.js.map": "/Lemonade-Stand/static/js/2.16677f4e.chunk.js.map",
     "index.html": "/Lemonade-Stand/index.html",
-    "precache-manifest.33e1d8515fd54c8d7df65635dc3ba9b3.js": "/Lemonade-Stand/precache-manifest.33e1d8515fd54c8d7df65635dc3ba9b3.js",
+    "precache-manifest.4333370ed8a4bfe13df65affd3e59e68.js": "/Lemonade-Stand/precache-manifest.4333370ed8a4bfe13df65affd3e59e68.js",
     "service-worker.js": "/Lemonade-Stand/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/Lemonade-Stand/static/css/2.af3c1da9.chunk.css.map",
     "static/js/2.16677f4e.chunk.js.LICENSE.txt": "/Lemonade-Stand/static/js/2.16677f4e.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.c96ad513.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.16677f4e.chunk.js",
-    "static/js/main.1affe936.chunk.js"
+    "static/js/main.7c9a6c16.chunk.js"
   ]
 }

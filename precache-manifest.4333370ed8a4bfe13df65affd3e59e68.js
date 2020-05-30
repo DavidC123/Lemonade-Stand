@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8403968c86a5117d9e81466d7dd361f1",
+    "revision": "320e62971b62b588ff9dfd80f847d0f7",
     "url": "/Lemonade-Stand/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Lemonade-Stand/static/js/2.16677f4e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d9210cc91e0ffd346a0e",
-    "url": "/Lemonade-Stand/static/js/main.1affe936.chunk.js"
+    "revision": "e014f57b753d7ce19731",
+    "url": "/Lemonade-Stand/static/js/main.7c9a6c16.chunk.js"
   },
   {
     "revision": "c863ac76c033f444cfcc",
