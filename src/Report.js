@@ -10,7 +10,7 @@ class Report extends React.Component {
 
         return (
             <div>
-                <h2 class="text-center">Employee Sales Form</h2>
+                <h2 class="text-center">Employee Sales and Commissions</h2>
                 <ReactBootStrap.Table variant="primary" striped bordered hover>
                     <thead>
                         <tr>
