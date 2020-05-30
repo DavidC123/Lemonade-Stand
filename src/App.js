@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FormPage from './FormPage.js';
 import Report from './Report.js';
 import * as ReactBootStrap from "react-bootstrap";
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 class App extends Component {
 
@@ -240,7 +240,12 @@ class App extends Component {
 
         <br></br>
         <br ></br>
-        <hr></hr>
+        <hr style={{
+          color: '#000000',
+          backgroundColor: '#000000',
+          height: 5,
+          borderColor: '#000000'
+        }}></hr>
         <br ></br>
         <br ></br>
 
@@ -290,7 +295,13 @@ class App extends Component {
 
         <br />
         <br />
-        <hr />
+        <hr style={{
+          color: '#000000',
+          backgroundColor: '#000000',
+          height: 5,
+          borderColor: '#000000'
+        }} />
+        <br />
 
         <div name="test3">
           <FormPage sendReport={this.getReport} staff={this.state.staff} products={this.state.prices} />
